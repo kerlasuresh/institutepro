@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    {% block content %}
+    <div class="container">
+    <h1 class='text-center bg-info'>Plase Give Your Valuble Feedback </h1>
+      <div class="row">
+        <div class="offset-md-4 col-md-4">
+          <form method="POST">
+            {% csrf_token %}
+          <b><label>Enter Your Name:</label></b>
+            <input type="text" name="name" class='form-control'>
+
+          <b><label>Enter Rating:</label></b>
+            <input type="text" name="rating" class='form-control'>
+
+          <b><label>Enter Your Feedback... :</label></b>
+            <textarea name="feedback" rows="4" cols="80" class='form-control'></textarea>
+
+            <center>
+              <input type="submit" value="Submit" class='btn btn-outline-success'>
+              <input type="reset" value="Clear" class='btn btn-outline-danger'><br><hr>
+          </form>
+          <h2 class='text-center text-info'>Available Feedbacks</h2>
+          {% if feedbacks %}
+            {% for i in feedbacks %}
+              <b>Name: {{ i.Name|lower|capfirst }}</b><br>
+              <b>Rating: {{ i.Rating }}</b><br>
+              <b>Date: {{ i.Date }}</b><br>
+              <b>FeedBack: {{ i.Feedback }}</b><br>
+
+            {% endfor %}
+
+          {% else %}
+          <h1>No FeedBacks Available</h1>
+          {% endif %}
+
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+    {% endblock %}
+  </body>
+</html>

@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    {% block content %}
+    <div class="container">
+      {% if course %}
+      <h1 class='text-center bg-info'>Welcome To Narayana Tech House</h1>
+      <table class='table table-bordered'>
+        <thead class='bg-success text-white'>
+          <tr>
+            <th>Course No</th>
+            <th>Course Name</th>
+            <th>Timings</th>
+            <th>Start Date</th>
+            <th>Durtion</th>
+            <th>Fee</th>
+            <th>Trainer Name</th>
+          </tr>
+        </thead>
+        <tbody class='bg-dark text-white'>
+          {% for i in course %}
+          <tr>
+            <td>{{ i.Course_Num }}</td>
+            <td>{{ i.Course_Name }}</td>
+            <td>{{ i.Starting_time }}</td>
+            <td>{{ i.Starting_Date }}</td>
+            <td>{{ i.Duration }}</td>
+            <td>{{ i.Fee }}</td>
+            <td>{{ i.Trainer_Name }}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+      {% endif %}
+    </div>
+  {% endblock %}
+  </body>
+</html>

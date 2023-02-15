@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    {% block content %}
+    <h1 class='text-center bg-success text-white'><marquee  behavior="alternate">NTH Gallery</marquee></h1><br>
+    <div class="container-fluid ">
+      <div class="row">
+        <div class="col-md-4">
+          <img src="{% static 'images/pic1.jpeg' %}"  style='height:90%; width:100%; border:3px red solid' class='img-thumbnail'>
+        </div>
+        <div class="col-md-4">
+          <img src="{% static 'images/pic2.jpeg' %}" style='height:90%; width:100%; border:3px red solid' class='img-thumbnail'>
+        </div>
+        <div class="col-md-4">
+          <img src="{% static 'images/pic3.jpeg' %}" style='height:90%; width:100%; border:3px red solid' class='img-thumbnail'>
+        </div>
+      </div><br>
+      <div class="row ">
+          <div class="col-md-4">
+            <img src="{% static 'images/pic4.jpeg' %}" style='height:90%; width:100%; border:3px red solid' class='img-thumbnail'>
+          </div>
+          <div class="col-md-4">
+            <img src="{% static 'images/pic5.jpeg' %}" style='height:90%; width:100%; border:3px red solid' class='img-thumbnail'>
+          </div>
+          <div class="col-md-4">
+            <img src="{% static 'images/pic8.jpeg' %}" style='height:90%; width:100%; border:3px red solid' class='img-thumbnail'>
+          </div>
+        </div><br>
+        <div class="row ">
+          <div class="col-md-4">
+            <img src="{% static 'images/pic7.jpeg' %}" style='height:90%; width:100%; border:3px red solid' class='img-thumbnail'>
+          </div>
+          <div class="col-md-4">
+            <img src="{% static 'images/pic3.jpeg' %}" style='height:90%; width:100%; border:3px red solid' class='img-thumbnail'>
+          </div>
+          <div class="col-md-4">
+            <img src="{% static 'images/pic9.jpeg' %}" style='height:90%; width:100%; border:3px red solid' class='img-thumbnail'>
+          </div>
+        </div>
+    </div>
+    {% endblock %}
+  </body>
+</html>
